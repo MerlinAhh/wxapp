@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/index/chatbox",
+    "pages/index/dynamic",
+    "pages/index/contact",
+    "pages/index/look",
+
+    "pages/look/lookDetail",
+    "pages/dynamic/myfriends",
+
+    "pages/chatbox/chat",
+
+    "pages/login/login",
+    "pages/login/welecome",
+    "pages/index/index",
+    "pages/addCgi/addCgi"
+  ],
+  "window":{
+    "backgroundColor":"#F6F6F6",
+    "backgroundTextStyle":"light",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true,
+    "backgroundColorTop": "#313232",
+    "navigationBarBackgroundColor": "#39ABFD"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/chatbox",
+      "text": "消息",
+      "iconPath": "/assets/icon/content.png",
+      "selectedIconPath": "/assets/icon/content_h.png"
+    },{
+      "pagePath": "pages/index/contact",
+      "text": "联系人",
+      "iconPath": "/assets/icon/man.png",
+      "selectedIconPath": "/assets/icon/man_h.png"
+    },{
+      "pagePath": "pages/index/look",
+      "text": "看点",
+      "iconPath": "/assets/icon/look.png",
+      "selectedIconPath": "/assets/icon/look_h.png"
+    },{
+      "pagePath": "pages/index/dynamic",
+      "text": "动态",
+      "iconPath": "/assets/icon/star.png",
+      "selectedIconPath": "/assets/icon/star_h.png"
+    }],
+    "selectedColor": "#47BAFE"
+  }
+}

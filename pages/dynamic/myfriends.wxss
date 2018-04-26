@@ -1,0 +1,281 @@
+/* pages/dynamic/myfriends.wxss */
+.top{
+  height: 440rpx;
+  width: 100%;
+  position: relative;
+  overflow: hidden
+}
+.top>image{
+  width: 100%;position: absolute;
+  display: block;
+  filter: brightness(0.8);
+}
+.top_nav{
+  height: 180rpx;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom,  rgba(244, 244, 244, .0) 0%,  rgba(244, 244, 244, .6) 100%)
+}
+.top_nav_in{
+  display: inline-block;
+  width: 20%;
+  height: 180rpx;
+  line-height: 280rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #fff
+}
+.top_header{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  bottom: 130rpx;
+  left: 40rpx
+}
+.top_header image{
+  width: 120rpx;
+  border-radius: 50%;
+  display: block
+}
+.top_header .zuan{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: #FFC128;
+  position: absolute;
+  bottom: -35rpx;
+  left: 50%;
+  transform: translateX(-50%)
+}
+.top_header .zuan_text{
+  height: 40rpx;
+  line-height: 40rpx;
+  width: 140rpx;
+  padding: 0 20rpx 0 56rpx;
+  border-radius: 20rpx;
+  position: absolute;
+  bottom: -25rpx;
+  background: #FFC128;
+  left: 56%;
+  font-size: 20rpx
+}
+
+.news{
+  width: 100%;
+  height: 130rpx;
+  /* border-bottom: 2rpx #DFE0E2 solid; */
+  padding: 30rpx 0;
+  box-sizing: border-box;
+  background-color: #fff
+}
+.news_btn{
+  margin: 0 33%; 
+  height: 70rpx;
+  border-radius: 35rpx;
+  background: #FFC128;
+  color: #C15800;
+  font-size: 26rpx;
+  text-align: left;
+  padding: 0 16rpx;
+  box-sizing: border-box;
+  position: relative
+}
+.news_btn image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 15rpx
+}
+.news_btn text{
+  line-height: 70rpx;
+  vertical-align: middle
+}
+.news_open{
+  position: absolute;
+  top: 0;
+  right: 15rpx
+}
+/* friends_box */
+.friends_box{
+  width:100%;
+  margin: 20rpx 0;
+  background: #fff;
+  padding-bottom: 2rpx;
+  position: relative
+}
+.friendstit{
+  color: #303030;
+  position: relative
+}
+.friendstit .weui-media-box__thumb,.friendstit .weui-media-box__hd.weui-media-box__hd_in-appmsg{
+  border-radius: 50%;
+  width: 70rpx;
+  height: 70rpx;
+  margin-right: 16rpx
+}
+.friendstit .weui-media-box__bd.weui-media-box__bd_in-appmsg{
+  height: 70rpx;
+}
+.friendstit .weui-media-box__bd.weui-media-box__bd_in-appmsg .weui-media-box__title{
+  font-size: 30rpx
+}
+.friendstit .weui-media-box__bd.weui-media-box__bd_in-appmsg .weui-media-box__desc{
+  font-size: 20rpx;
+  -webkit-line-clamp:1;
+}
+.friendstit .weui-media-box {
+  padding: 16rpx;
+}
+.friendstit_more{
+  width: 14rpx;
+  height: 14rpx;
+  border-right: 2rpx #666 solid;
+  border-bottom: 2rpx #666 solid;
+  position: absolute;
+  top: 50%;
+  right: 25rpx;
+  transform: translateY(-8rpx) rotate(45deg);
+}
+.friendstit_morethan{
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0
+}
+.shuoshuo{
+  width: 100%;
+  display: block;
+  padding: 0 16rpx 16rpx;
+  font-size: 28rpx;
+  line-height: 140%;
+  color: #303030;
+  box-sizing: border-box
+}
+
+/* 多图 */
+.img_box{
+  width: 100%;
+  padding: 0 16rpx 16rpx;
+  box-sizing: border-box
+}
+.placeholder{
+  margin: 1px;
+  text-align: center;
+  color: #cfcfcf;
+  overflow: hidden;
+  max-height: 900rpx
+}
+.placeholder image{
+  width: 100%;
+  display: block
+}
+.friends_tool{
+  width: 100%;
+  padding: 20rpx 16rpx;
+  box-sizing: border-box
+}
+.left_tool{
+  display: inline-block;
+  width: 50%;
+  font-size: 26rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+}
+.right_tool{
+  display: inline-block;
+  width: 50%;
+  text-align: right;
+}
+.friends_tool image{
+  width: 46rpx;
+  vertical-align: middle;
+  margin-left: 35rpx
+}
+
+.friends_zan{
+  width: 100%;
+  padding: 0 16rpx;
+  line-height: 100%;
+  box-sizing: border-box
+}
+.friends_zan image{
+  width: 35rpx;
+  margin-right: 20rpx;
+  vertical-align: middle
+}
+.friends_zanin{
+  font-size: 24rpx;
+  color: #063C6E;
+}
+.friends_msgs{
+  margin: 18rpx;
+  background: #F8F8F8;
+  font-size: 28rpx;
+  padding: 0 16rpx;
+  box-sizing: border-box
+}
+
+.friends_cover{
+  width: 100%;
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  background: #fff;
+  z-index: 999
+}
+
+.weui-cells.weui-cells_after-title{
+  border: none;
+  font-size: 28rpx
+}
+.weui-cell{
+  padding:10px 15px 10px 10px
+}
+.weui-cells.weui-cells_after-title::after,
+.weui-cells.weui-cells_after-title::before{
+  border: none;
+  width: 0
+}
+.weui-cell::before{
+  left: 0
+}
+.friends_cover_open{
+  width: 30rpx;
+  height: 30rpx;
+  background: #fff;
+  position: absolute;
+  top: -10rpx;
+  right: 16rpx;
+  transform: rotate(45deg)
+}
+
+
+.mask{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  left: 0
+}
+
+.friends_talk{
+  width: 100%;
+  padding: 20rpx 16rpx 10rpx;
+  font-size: 24rpx;
+  box-sizing: border-box
+}
+.friends_talk .lis{
+  padding: 4rpx 0
+}
+.friends_talk .lis view{
+  padding: 0
+}
+.friends_talk .lis text.talk_name{
+  color: #063C6E
+}

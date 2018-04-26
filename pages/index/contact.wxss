@@ -1,0 +1,58 @@
+
+.weui-cell.weui-cell_access{
+  font-size: 28rpx;
+  color: #000000;
+  font-weight: 500;
+  padding: 10px 15px;
+}
+.weui-cell::after,.weui-cell::before{
+  left: 0
+}
+.weui-tab__content{
+    text-align: center;
+}
+
+.weui-navbar {
+  background: #fff
+}
+.weui-tab__panel{
+ padding-top: 43px
+}
+.weui-tab{
+  margin-top: 20rpx;
+}
+.weui-navbar__slider{
+  background: #12B7F5;
+  width:80rpx;
+}
+.weui-navbar__item{
+  padding:10px 0;
+  color: #7B7B7B
+}
+.haoyou .weui-cell__bd{
+  text-align: left;
+  padding-left: 30rpx
+}
+.weui-navbar__item.weui-bar__item_on{
+  color: #12B7F5
+}
+
+
+.weui-navbar__title{
+  font-size: 28rpx;
+}
+
+.haoyou{
+  background: #fff
+}
+.haoyou .weui-cell__ft_in-access{
+  padding: 12px 15px;
+}
+
+.haoyou>.weui-cell::before{
+  border: none;
+  width: 0
+}
+.haoyou .weui-cell__ft_in-access::after{
+  left: 20rpx
+} 

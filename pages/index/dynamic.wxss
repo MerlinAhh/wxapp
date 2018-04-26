@@ -1,0 +1,36 @@
+/* pages/index/dynamic.wxss */
+.weui-grid__icon{
+  width: 82rpx;
+  height: 82rpx
+}
+.weui-grids{
+  border: none
+}
+.weui-grid {
+  padding-bottom: 26rpx;
+  background: #FFF;
+  border: none;
+  padding-top:10rpx;
+}
+.weui-grid__label{
+  font-size: 24rpx;
+}
+
+
+
+.weui-cells.weui-cells_after-title{
+  margin-top: 20rpx;
+  border: none;
+  font-size: 28rpx
+}
+.weui-cell{
+  padding:10px 15px 10px 10px
+}
+.weui-cells.weui-cells_after-title::after,
+.weui-cells.weui-cells_after-title::before{
+  border: none;
+  width: 0
+}
+.weui-cell::before{
+  left: 0
+}

@@ -1,0 +1,51 @@
+<!--pages/look/lookDetail.wxml-->
+<view class="page">
+    <view class="page__hd">
+        <view class="page__title">{{item.title}}</view>
+        <view class="page__desc">邻家boy
+          <text style='float:right'>{{item.cTime}}</text>
+        </view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-article">
+            <!-- <view class="weui-article__h1">大标题</view> -->
+            <view class="weui-article__section">
+                <!-- <view class="weui-article__title">章标题</view> -->
+                <view class="weui-article__section">
+                    <!-- <view class="weui-article__h3">1.1 节标题</view> -->
+                    <view class="weui-article__p">
+                        <image class="weui-article__img" src="{{item.img}}" mode="aspectFit" style="height: 180px" />
+                    </view>
+                    <view class="weui-article__p">
+                        <!-- <image class="weui-article__img" src="{{item.img1}}" mode="aspectFit" style="height: 180px" /> -->
+                       <text>{{item.content}}</text>
+                        <!-- <image class="weui-article__img" src="{{item.img2}}" mode="aspectFit" style="height: 180px" /> -->
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='zan'>
+          <view class='friends_tool'>
+            <view class='left_tool'>
+              浏览99次
+            </view><!--
+            --><view class='right_tool'>
+              <image src='{{zanBtn?"/assets/icon/zan_h.png":"/assets/icon/zan.png"}}' mode='widthFix' data-id='{{index}}' bindtap='zanBtn'></image>
+              <image src='/assets/icon/msgs.png' mode='widthFix'></image>
+              <image src='/assets/icon/share.png' mode='widthFix'></image>
+            </view>
+          </view>
+          <!-- <view class='friends_zan'>
+            <image src='/assets/icon/zan_h.png' mode='widthFix'></image> <text class='friends_zanin' wx:for='' wx:for-index='i' wx:item='*this'><text wx:if='1'>、</text></text>
+          </view>
+          <view class='friends_talk'>
+            <view class='lis' wx:for='{{items[index].talk}}' wx:for-index='i' wx:item='*this'>
+              <view wx:for='{{items[index].talk[i]}}' wx:for-index='j' wx:item='*this'>
+                <text class='talk_name' wx:if='{{items[index].talk[i][j].name1&&items[index].talk[i][j].name}}'>{{items[index].talk[i][j].name1}}<text style='color:#303030'> 回复 </text></text><text class='talk_name'>{{items[index].talk[i][j].name}}：</text>
+                <text data-id='{{index}}' data-name='{{items[index].talk[i][j].name}}' data-names='{{items[index].talk[i][j].name1}}' bindtap="bindinputfocus">{{items[index].talk[i][j].des}}</text>
+              </view>
+            </view>
+          </view> -->
+        </view> 
+    </view>
+</view>

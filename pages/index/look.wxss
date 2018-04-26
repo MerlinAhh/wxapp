@@ -1,0 +1,43 @@
+/* pages/index/look.wxss */
+
+.lookList{
+  width: 100%;
+  background: #fff;
+  padding-bottom: 30rpx;
+  margin-bottom: 10rpx;
+}
+.imgBox{
+  width: 100%;
+  overflow: hidden;
+}
+.imgBox image{
+  width: 33%;
+  height: 180rpx
+}
+.imgBox image:nth-of-type(2){
+  margin: 0 .5%
+}
+.titBox{
+  box-sizing: border-box;
+  padding: 0rpx 30rpx 10rpx;
+  font-size: 30rpx;
+  line-height: 120%
+}
+.nameBox{
+  box-sizing: border-box;
+  padding: 0rpx 30rpx;
+  font-size: 24rpx;
+  color: #929292
+}
+
+/* more */
+.more{
+  background-color: rgba(255, 255, 255, .2);
+  color: #aeaeae;
+  width: 100%;
+  line-height: 80rpx;
+  font-size: 26rpx;
+  text-align: center;
+  margin-top: -10rpx;
+  border-top: 2rpx #dedede dashed
+}

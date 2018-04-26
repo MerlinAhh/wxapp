@@ -1,0 +1,14 @@
+<!--pages/login/login.wxml-->
+<view class='container'>
+  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523442413897&di=7347b10cf5ca33a367e9dd8b7b645aac&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fblog%2F201404%2F08%2F20140408053146_JCE5s.jpeg' class='pagesbgImg'></image>
+  <view class='pagesbgImg'></view>
+  <image class='loginlogo' src='/assets/icon/logo.png' mode='widthFix'></image>
+  <input type='text' class='uName' placeholder='QQ号/手机号/邮箱' placeholder-style='color:#fff;' bindinput='uName'></input>
+  <input type='password' class='pWord' placeholder='密码' placeholder-style='color:#fff;' bindinput='pWord'></input>
+  <button class='login_in' plain bindtap='login'>登 录</button>
+  <view class='more'>
+    <text bindtap='forget'>忘记密码？</text>
+    <text bindtap='newsUser'>新用户注册</text>
+  </view>
+  <view class='readme'>登录即代表阅读并同意<text bindtap='readAndAgress'>服务条款</text></view>
+</view>

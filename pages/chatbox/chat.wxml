@@ -1,0 +1,92 @@
+<!--pages/chatbox/chat.wxml-->
+<import src="../../template/tpl_emoji.wxml" />
+
+<scroll-view scroll-y style='width:100%; height:100%;position:fixed;top:0;left:0;'>
+  <view style='width:100%;padding-bottom:100rpx;padding-top:20rpx;overflow: hidden;'>
+    <view style='text-align:{{datas[datasIndex].content.from_id == openid ? "right" : "left"}};overflow:hidden;position:relative' wx:for='{{datas}}' wx:for-index='datasIndex' wx:key='*this'>
+      <image class='Img {{datas[datasIndex].content.from_id == openid ? "rImg" : "lImg"}}' src='{{datas[datasIndex].content.from_id == openid ? header : headers}}'></image>
+      <view class='pop {{datas[datasIndex].content.from_id == openid ? "rpop" : "lpop"}}'>
+        {{datas[datasIndex].content.msg_body.text}}
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class='use'>
+  <view class='messagesBox' bindtap='messagestextIntap'>
+    <view class='input'><input type='text' value='{{messageIn}}' bindinput='messagestextIn' cursor-spacing='38' confirm-hold='true' confirm-type='send'></input></view>
+    <button bindtap='messagestextSubmit' plain>发送</button>
+  </view>
+  <view class='tools'>
+    <view class='tool' data-id='0' bindtap='tool'>
+      <image src='/assets/icon/voice.png' mode='widthFix'></image>
+    </view>
+    <view class='tool' data-id='1' bindtap='tool'>
+      <image src='/assets/icon/imgs.png' mode='widthFix'></image>
+    </view>
+    <view class='tool' data-id='2' bindtap='tool'>
+      <image src='/assets/icon/camera.png' mode='widthFix'></image>
+    </view>
+    <view class='tool' data-id='3' bindtap='tool'>
+      <image src='/assets/icon/chuoyichuo.png' mode='widthFix'></image>   
+    </view> 
+     <view class='tool' data-id='4' bindtap='tool'>
+      <image src='/assets/icon/redenvelope.png' mode='widthFix'></image>
+    </view>
+    <view class='tool' data-id='5' bindtap='tool'>
+      <image src='/assets/icon/gif.png' mode='widthFix'></image>
+    </view>
+    <view class='tool' data-id='6' bindtap='tool'>
+      <image src='/assets/icon/emoji.png' mode='widthFix'></image>
+    </view>
+    <view class='tool' data-id='7' bindtap='tool'>
+      <image src='/assets/icon/more.png' mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='tool_Box' catchtouchcancel='true'>
+    <view class='telltool' wx:if='{{TOOL_ONE}}'>
+    <!--  indicator-dots='true'  -->
+      <swiper indicator-color="rgba(0, 0, 0, .3)" indicator-active-color="rgba(0, 0, 0, .8)" duration="500">
+        <block wx:for="{{tellbox}}" wx:key='*this' wx:for-index='tellIndex'>
+          <swiper-item class='tellbox'>
+            <view>
+              <text class='type'>按住说活</text>
+              <image src="{{tellbox[tellIndex].img}}" mode='widthFix'/>
+            </view>
+          </swiper-item>
+        </block>
+        <view class='types'>
+          <text>变声 </text>
+          <text> 对讲 </text>
+          <text> 录音</text>
+        </view>
+      </swiper>
+    </view>
+    <view wx:elif='{{TOOL_TWO}}'>
+      2
+    </view>
+    <view wx:elif='{{TOOL_THREE}}'></view>
+    <view wx:elif='{{TOOL_FOUR}}'>
+      4
+    </view>
+    <view wx:elif='{{TOOL_FIVE}}'>
+      5
+    </view>
+    <view wx:elif='{{TOOL_SIX}}'>
+      6
+    </view>
+    <view class='emojitool' wx:elif='{{TOOL_SEVEN}}'>
+      <scroll-view scroll-x>
+        <template is="imgTplBak" data="{{emojiMsg}}"></template>
+      </scroll-view>
+      <image class='emojidel' src='/assets/icon/emojidel.png' mode='widthFix'></image>
+    </view>
+    <view wx:elif='{{TOOL_EIGHT}}'>
+      8
+    </view>
+  </view> 
+</view>
+
+<!-- <loading hidden="{{loadingHidden}}">  
+  加载中...  
+</loading> -->

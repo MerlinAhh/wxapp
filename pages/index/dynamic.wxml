@@ -1,0 +1,31 @@
+<!--pages/index/dynamic.wxml-->
+<view style='width:100%;height:100%;' bindtap='hideInput'>
+  <search id='search'></search>
+  <view class="weui-grids">
+      <block wx:for="{{grids}}" wx:for-index='index' wx:key="*this">
+          <navigator url="/pages/dynamic/myfriends" class="weui-grid" hover-class="weui-grid_active">
+              <image class="weui-grid__icon" src="{{grids[index].img}}" />
+              <view class="weui-grid__label">{{grids[index].tit}}</view>
+          </navigator>
+      </block>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active" wx:for='{{list}}' wx:for-index='index' wx:key='*this'>
+        <view class="weui-cell__hd">
+            <image src="{{list[index].icon}}" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd"> {{list[index].tit}}</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
+    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        <view class="weui-cell__hd">
+            <image src="/assets/icon/run_32.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+        </view>
+        <view class="weui-cell__bd">运动</view>
+        <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+    </navigator>
+  </view>
+</view>
+

@@ -1,0 +1,37 @@
+/* pages/login/welecome.wxss */
+
+.welelogo{
+  width: 26%;
+  margin: 100rpx auto
+}
+.welecontain{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}
+.welecontain view{
+  font-size: 80rpx;
+  font-weight: 500;
+  color: #fff;
+  margin-left: 20rpx;
+  line-height: 130%
+}
+.welecontain button{
+  width: 45.5%;
+  height: 70rpx;
+  display: inline-block;
+  color: #fff;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  border-radius: 10rpx
+}
+.welecontain button:first-of-type[plain]{
+  margin: 80rpx 1.5% 80rpx 3%;
+  border: none;
+  background: rgba(255, 255, 255, .6)
+}
+.welecontain button:last-of-type[plain]{
+  margin: 80rpx 3% 80rpx 1.5%;
+  border: none;
+  background: rgba(3,160,219, .6)
+}

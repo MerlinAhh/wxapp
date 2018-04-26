@@ -1,0 +1,46 @@
+/* search.wxml.wxss */
+@import'/app.wxss';
+ .page__bd{
+  position: relative
+}
+.weui-search-bar{
+  background: #fff;
+  border: none
+}
+.weui-search-bar__form,.weui-search-bar__label{
+  color: #A0A0A0;
+  background: #F3F3F3!important
+}
+.weui-search-bar__form,.weui-search-bar__label,.weui-search-bar__box,.weui-search-bar__input{
+  line-height:24px!important;
+  height:26px!important;
+  background: #F3F3F3!important;
+  border: none!important;
+  outline: none!important;
+}
+.weui-search-bar__box{
+  color: #A0A0A0;
+}
+.weui-search-bar__input{
+  font-size: 26rpx!important;
+}
+.weui-search-bar__text,weui-search-bar__label{
+  font-size: 26rpx!important;
+  line-height: 22rpx!important
+}
+.weui-search-bar__cancel-btn{
+  font-size: 28rpx!important;
+  line-height:26px!important
+}
+.searchbar-result{
+  width: 100%;
+    margin-top: 0;
+    font-size: 14px;
+    position: absolute;
+    top:96rpx;
+    left: 0;
+    z-index: 2
+}
+.searchbar-result:before{
+    display: none;
+} 

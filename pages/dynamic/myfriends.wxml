@@ -1,0 +1,163 @@
+<!--pages/dynamic/myfriends.wxml-->
+<view class='top'>
+  <image src='/assets/img/header_bg.jpg' mode='widthFix'></image>
+  <view class='top_header'>
+    <image src='{{userInfo.avatarUrl}}' mode='widthFix'></image>
+    <view class='zuan'></view>
+    <view class='zuan_text'>黄钻六折优惠</view>
+  </view>
+  <view class='top_nav'>
+      <view class='top_nav_in'>相册</view><!--  
+      --><view class='top_nav_in'>说说</view><!--  
+      --><view class='top_nav_in'>个性化</view><!--  
+      --><view class='top_nav_in'>小游戏</view><!--  
+      --><view class='top_nav_in'>小视频</view>
+  </view>
+</view>
+<view class='news'>
+  <view class='news_btn'>
+    <image src="/assets/img/header.png" /> <text> 1条新消息 </text> <text class='news_open'> > </text>
+  </view>
+</view>
+<view class='friends_box' wx:for='{{items}}' wx:key='items' wx:for-index='index'>
+  <view class='friendstit'>
+    <view class=' weui-panel__bd'>
+      <view class="weui-media-box weui-media-box_appmsg">
+        <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+          <image class="weui-media-box__thumb" src="{{items[index].header}}" />
+        </view>
+        <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+          <view class="weui-media-box__title">{{items[index].name}}</view>
+          <view class="weui-media-box__desc">今天 11:20 音乐</view>
+        </view>
+        <text class='friendstit_more'></text>
+        <view class='friendstit_morethan' data-id='{{index}}' bindtap='moreaction'>
+        </view>
+      </view>
+      <view class='shuoshuo'>
+        {{items[index].des}}
+      </view>
+      <view class="img_box page__bd page__bd_spacing">
+          <view class="weui-flex" wx:if='{{items[index].img.length == 1}}'>
+              <view class="weui-flex__item"><view class="placeholder">
+                <image src='{{items[index].img[0]}}' mode='widthFix' data-id='{{index}}' data-index='0' bindtap='previewImage'></image>
+              </view></view>
+          </view>
+          <view class="weui-flex" wx:elif='{{items[index].img.length == 2}}'>
+              <view class="weui-flex__item"><view class="placeholder">
+                <image src='{{items[index].img[0]}}' mode='center' data-id='{{index}}' data-index='0' bindtap='previewImage'></image>
+              </view></view>
+              <view class="weui-flex__item"><view class="placeholder">
+                <image src='{{items[index].img[1]}}' mode='center' data-id='{{index}}' data-index='1' bindtap='previewImage'></image>
+              </view></view>
+          </view>
+          <view style='overflow:hidden' wx:elif='{{items[index].img[index].length >= 3}}'>
+            <view class="weui-flex 0" wx:if='{{items[index].img[index].length >= 3}}'>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[0]}}' mode='aspectFill' data-id='{{index}}' data-index='0' bindtap='previewImage'></image>
+                </view></view>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[1]}}' mode='aspectFill' data-id='{{index}}' data-index='1' bindtap='previewImage'></image>
+                </view></view>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[2]}}' mode='aspectFill' data-id='{{index}}' data-index='2' bindtap='previewImage'></image>
+                </view></view>
+            </view>
+            <view class="weui-flex 1" wx:if='{{items[index].img.length <= 6 && items[index].img.length >= 3 || items[index].img.length >= 3}}'>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[3]}}' wx:if='{{items[index].img[3]}}' mode='aspectFill' data-id='{{index}}' data-index='3' bindtap='previewImage'></image>
+                </view></view>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[4]}}' wx:if='{{items[index].img[4]}}' mode='aspectFill' data-id='{{index}}' data-index='4' bindtap='previewImage'></image>
+                </view></view>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[5]}}' wx:if='{{items[index].img[5]}}' mode='aspectFill' data-id='{{index}}' data-index='5' bindtap='previewImage'></image>
+                </view></view>
+            </view>
+            <view class="weui-flex 2" wx:if='{{items[index].img.length <= 9 && items[index].img.length >= 6}}'>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[6]}}' wx:if='{{items[index].img[6]}}' mode='aspectFill' data-id='{{index}}' data-index='6' bindtap='previewImage'></image>
+                </view></view>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[7]}}' wx:if='{{items[index].img[7]}}' mode='aspectFill' data-id='{{index}}' data-index='7' bindtap='previewImage'></image>
+                </view></view>
+                <view class="weui-flex__item"><view class="placeholder" style='height:{{imgW}}px'>
+                  <image src='{{items[index].img[8]}}' wx:if='{{items[index].img[8]}}' mode='aspectFill' data-id='{{index}}' data-index='8' bindtap='previewImage'></image>
+                </view></view>
+            </view>
+          </view>
+      </view>
+      <view style='clear: both'></view>
+      <view class='friends_tool'>
+        <view class='left_tool'>
+          浏览{{items[index].look}}次
+        </view><!--
+        --><view class='right_tool'>
+          <image src='{{items[index].zan?"/assets/icon/zan_h.png":"/assets/icon/zan.png"}}' mode='widthFix' data-id='{{index}}' bindtap='zanBtn'></image>
+          <image src='/assets/icon/msgs.png' mode='widthFix'></image>
+          <image src='/assets/icon/share.png' mode='widthFix'></image>
+        </view>
+      </view>
+      <view class='friends_zan'>
+        <image src='/assets/icon/zan_h.png' mode='widthFix'></image> <text class='friends_zanin' wx:for='{{items[index].zanList}}' wx:for-index='i' wx:item='*this'>{{items[index].zanList[i]}}<text wx:if='{{i !== items[index].zanList.length - 1}}'>、</text></text>
+      </view>
+      <view class='friends_talk'>
+        <view class='lis' wx:for='{{items[index].talk}}' wx:for-index='i' wx:item='*this'>
+          <view wx:for='{{items[index].talk[i]}}' wx:for-index='j' wx:item='*this'>
+            <text class='talk_name' wx:if='{{items[index].talk[i][j].name1&&items[index].talk[i][j].name}}'>{{items[index].talk[i][j].name1}}<text style='color:#303030'> 回复 </text></text><text class='talk_name'>{{items[index].talk[i][j].name}}：</text>
+            <text data-id='{{index}}' data-name='{{items[index].talk[i][j].name}}' data-names='{{items[index].talk[i][j].name1}}' bindtap="bindinputfocus">{{items[index].talk[i][j].des}}</text>
+          </view>
+        </view>
+      </view>
+      <input class='friends_msgs' type='text' data-id='{{index}}' data-name='{{items[index].talk[i][j].name}}' placeholder='评论' focus="{{focus[index]}}" confirm-type='send' bindconfirm='bindinputmessage'></input>
+    </view>
+  </view>
+  <view hidden='{{iscover[index]?"":"1"}}' class='friends_cover' catchtouchmove='true'>
+    <view class="weui-cells weui-cells_after-title">
+      <navigator url="" class="weui-cell weui-cell_access" hover-class='none'>
+          <view class="weui-cell__hd">
+              <image src="/assets/icon/share.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">分享到</view>
+          <view class="weui-cell__ft"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class='none'>
+          <view class="weui-cell__hd">
+              <image src="/assets/icon/run_32.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">收藏</view>
+          <view class="weui-cell__ft"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class='none'>
+          <view class="weui-cell__hd">
+              <image src="/assets/icon/run_32.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">转载照片</view>
+          <view class="weui-cell__ft"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class='none'>
+          <view class="weui-cell__hd">
+              <image src="/assets/icon/run_32.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">隐藏此条动态</view>
+          <view class="weui-cell__ft"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class='none'>
+          <view class="weui-cell__hd">
+              <image src="/assets/icon/run_32.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">不看他的动态</view>
+          <view class="weui-cell__ft"></view>
+      </navigator>
+      <navigator url="" class="weui-cell weui-cell_access" hover-class='none'>
+          <view class="weui-cell__hd">
+              <image src="/assets/icon/run_32.png" style="margin-right: 5px;vertical-align: middle;width:20px; height: 20px;"></image>
+          </view>
+          <view class="weui-cell__bd">举报</view>
+          <view class="weui-cell__ft"></view>
+      </navigator>
+    </view>
+    <view class='friends_cover_open'></view>
+  </view>
+</view>
+<view hidden='{{iscoverent?"":"1"}}' class='mask' catchtouchmove='true' bindtap='isfalse'></view>

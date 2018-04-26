@@ -1,0 +1,56 @@
+/* pages/login/login.wxss */
+.container{
+  align-items: left;
+  font-size: 28rpx;
+  color: #fff
+}
+
+.loginlogo{
+  width: 160rpx;
+  margin: 80rpx 5% 80rpx;
+  display: inline-block;
+}
+.uName,.pWord{
+  font-size: 30rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 90%;
+  margin: 0 5%;
+  border-bottom: 2rpx #a1a1a1 solid;
+  padding: 10rpx;
+  box-sizing: border-box;
+  color: #fff
+}
+
+button.login_in[plain]{
+  height: 80rpx;
+  line-height: 80rpx;
+  width: 90%;
+  margin: 30rpx 5%;
+  background: rgba(3,160,219, .8);
+  border: none;
+  color: #fff
+}
+.more{
+  width: 90%;
+  overflow: hidden;
+  margin: 0 5%;
+  color: #36B8EF;
+}
+.more text:first-of-type{
+  float: left
+}
+.more text:last-of-type{
+  float: right
+}
+
+.readme{
+  width: 100%;
+  color: #fff;
+  position: fixed;
+  bottom: 20rpx;
+  text-align: center
+}
+.readme text{
+  color: #36B8EF;
+}

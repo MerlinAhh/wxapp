@@ -1,0 +1,13 @@
+<!--pages/login/welecome.wxml-->
+<view class='container'>
+  <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1523442413897&di=7347b10cf5ca33a367e9dd8b7b645aac&imgtype=0&src=http%3A%2F%2Fimg5.duitang.com%2Fuploads%2Fblog%2F201404%2F08%2F20140408053146_JCE5s.jpeg' class='pagesbgImg'></image>
+  <view class='pagesbgImg' style='filter:(2px);'></view>
+  <image class='welelogo' src='/assets/icon/logo.png' mode='widthFix'></image>
+  <view class='welecontain'>
+    <view>I'M QQ</view>
+    <view>每一天</view>
+    <view>乐在沟通</view>
+    <button plain bindtap='login'>登录</button>
+    <button plain bindtap='news_login'>新用户</button>
+  </view>
+</view>
