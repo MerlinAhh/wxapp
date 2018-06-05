@@ -6,6 +6,8 @@ App({
   config: {
     apiBase: 'http://localhost/weicms/index.php?s=/addon/Cms/Cms',
     wsBase: 'ws://192.168.0.117:8080'
+    // apiBase: 'http://www.getzoo5.cn/weicms/index.php?s=/addon/Cms/Cms',
+    // wsBase: 'ws://120.79.246.18'
   },
   onLaunch: function () {
       qcloud.setLoginUrl(config.service.loginUrl)
@@ -39,9 +41,15 @@ App({
             }
           }
         })
+        var systemInfo = wx.getSystemInfoSync()
+        var navH = (systemInfo.screenHeight - systemInfo.windowHeight) / 3 * 4
+        this.globalData.navH = navH
+        this.globalData.systemInfo = systemInfo
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    systemInfo: null,
+    navH: 0
   },
   setTabbar: function(a,b){
     if(a == 0){
@@ -62,38 +70,5 @@ App({
     wx.showTabBar({
       animation: true
     })
-  },
-  formatMsgTime(timespan) {
-    var times = timespan * 1000
-    var dateTime = new Date(times);
-    var year = dateTime.getFullYear();
-    var month = dateTime.getMonth() + 1;
-    var day = dateTime.getDate();
-    var hour = dateTime.getHours();
-    var minute = dateTime.getMinutes();
-    var second = dateTime.getSeconds();
-    var now = new Date();
-    var now_new = new Date().getTime()        // Date.parse(now.toDateString());  //typescript转换写法
-    var milliseconds = 0;
-    var timeSpanStr;
-    milliseconds = now_new - times;
-    if (milliseconds <= 1000 * 60 * 1) {
-      timeSpanStr = '刚刚';
-    }
-    else if (1000 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60) {
-      timeSpanStr = Math.round((milliseconds / (1000 * 60))) + '分钟前';
-    }
-    else if (1000 * 60 * 60 * 1 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24) {
-      timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60)) + '小时前';
-    }
-    else if (1000 * 60 * 60 * 24 < milliseconds && milliseconds <= 1000 * 60 * 60 * 24 * 15) {
-      timeSpanStr = Math.round(milliseconds / (1000 * 60 * 60 * 24)) + '天前';
-    }
-    else if (milliseconds > 1000 * 60 * 60 * 24 * 15 && year == now.getFullYear()) {
-      timeSpanStr = month + '-' + day + ' ' + hour + ':' + minute;
-    } else {
-      timeSpanStr = year + '-' + month + '-' + day + ' ' + hour + ':' + minute;
-    }
-    return timeSpanStr;
   }
 })

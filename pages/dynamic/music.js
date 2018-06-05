@@ -1,42 +1,47 @@
-// pages/look/lookDetail.js
+// pages/dynamic/music.js
 var app = new getApp
+var sliderWidth = 112.5; // 需要设置slider的宽度，用于计算中间位置
+
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    item: []
+    tabs: ["我的", "好友在听", "正在直播"],
+    activeIndex: 0,
+    sliderOffset: 0,
+    sliderLeft: 0,
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
   onLoad: function (options) {
     var that = this
-    wx.request({
-      url: app.config.apiBase + '/getDetail/id/' + options.id,
-      data: {},
-      header: {
-        'content-type': 'application/json'
-      },
+    wx.getSystemInfo({
       success: function (res) {
-        console.log(res)
-        if (res.statusCode == 200) {
-          var str = res.data.content
-          var str1 = str.replace(/'↵'/g, '\t')
-          res.data.content = str1
-          that.setData({
-            item: res.data
-          })
-        }
+        that.setData({
+          sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
+          sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex
+        });
+        var width = (res.windowWidth - 17) / 3
+        that.setData({
+          imgW: width
+        })
       }
     })
 
-    this.search = this.selectComponent("#search");
     this.navbar_top = this.selectComponent("#navbar-top");
-    this.navbar_top.isBack('详 情')
+    this.navbar_top.isBack('音 乐')
+
   },
-  zanBtn: function () {
+  tabClick: function (e) {
     this.setData({
-      zanBtn: !this.data.zanBtn
-    })
+      sliderOffset: e.currentTarget.offsetLeft,
+      activeIndex: e.currentTarget.id
+    });
   },
-
-
-
 
   // 下拉加载
   touchmove: function (event) {

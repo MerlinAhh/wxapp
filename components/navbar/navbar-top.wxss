@@ -1,0 +1,51 @@
+/* components/navbar/navbar-top.wxss */
+.navbar-top{
+  background: -ms-linear-gradient(left, #4F8CFE,  #38BAFE);        /* IE 10 */  
+  background:-moz-linear-gradient(left,#b8c4cb,#f6f6f8);/*火狐*/
+  background:-webkit-gradient(linear, 0% 0%, 0% 100% left,from(#4F8CFE), to(#38BAFE));/*谷歌*/   
+  background: -webkit-gradient(linear, 0% 0%, 0% 100% left, from(#4F8CFE), to(#38BAFE));      /* Safari 4-5, Chrome 1-9*/  
+  background: -webkit-linear-gradient(left, #4F8CFE, #38BAFE);   /*Safari5.1 Chrome 10+*/  
+  background: -o-linear-gradient(left, #4F8CFE, #38BAFE);  /*Opera 11.10+*/  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  z-index: 999
+}
+.navbar-top_in{
+  position: relative;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%
+}
+.navbar-top_in view{
+  width:100%;
+  height: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  background: #F0F2F8;
+  color: #746F76;
+}
+
+.back{
+  height: 100%;
+  width: 76px;
+  float: left
+}
+.back view{
+  height: 100%;
+  width: 60px;
+  color: #131313;
+  font-size: 80rpx;
+  padding-left: 16rpx;
+}
+.back_top{
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #131313;
+  padding-right: 136rpx;
+  box-sizing: border-box
+}

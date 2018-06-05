@@ -1,4 +1,5 @@
 // pages/index/dynamic.js
+var app = new getApp
 Page({
 
   /**
@@ -19,7 +20,10 @@ Page({
   },
   onReady: function () {
     this.search = this.selectComponent("#search");
+    this.navbar_top = this.selectComponent("#navbar-top");
+
     this.search.searchin('大家都在搜：哈哈哈')
+    this.navbar_top.isBack('动 态')
   },
 
   showInput() {
@@ -33,5 +37,20 @@ Page({
   },
   inputTyping(e) {
     this.search.inputTyping();
+  },
+
+  gointo: function(e){
+    console.log(e)
+    if (e.currentTarget.dataset.id == 0) {
+
+    } else if (e.currentTarget.dataset.id == 1) {
+
+    } else if (e.currentTarget.dataset.id == 2) {
+      wx.navigateTo({
+        url: '/pages/dynamic/music'
+      })
+    } else if (e.currentTarget.dataset.id == 3) {
+
+    }
   }
 })

@@ -1,0 +1,14 @@
+<!--components/navbar/navbar-top.wxml-->
+<view class='navbar-top' style='height:{{navH}}px'>
+  <view class='back' style='height:{{navH}}px; line-height:{{navH + 5}}px'>
+    <view wx:if='{{isBack}}' catchtap='backTo'> ‹ </view>
+  </view>
+  <view class='back_top' catchtap='backTop' style='height:{{navH}}px; line-height:{{navH + 15}}px'>{{navtit}}</view> 
+</view>
+<view style='width: 100%; height: {{pushH}}px;transition:{{pushdelay}} {{ispull?"none":"all .6s"}};'></view>
+<view class='navbar-top_in' style='height:{{navH-20}}px;line-height:{{navH-20}}px;'>
+    <view wx:if='{{pull == 0}}'>👇 下拉刷新</view>
+    <view wx:elif='{{pull == 1}}'>👆 释放立即刷新</view>
+    <view wx:elif='{{pull == 2}}'>💪 正在刷新...</view>
+    <view wx:elif='{{pull == 3}}'>👌 刷新成功</view>
+</view>

@@ -8,6 +8,10 @@
     "pages/look/lookDetail",
     "pages/dynamic/myfriends",
 
+    "pages/dynamic/music",
+
+    "pages/dynamic/mine/gallery",
+
     "pages/chatbox/chat",
 
     "pages/login/login",
@@ -19,9 +23,10 @@
     "backgroundColor":"#F6F6F6",
     "backgroundTextStyle":"light",
     "navigationBarTitleText": "",
-    "navigationBarTextStyle":"white",
-    "enablePullDownRefresh": true,
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": false,
     "backgroundColorTop": "#313232",
+    "navigationStyle": "custom",
     "navigationBarBackgroundColor": "#39ABFD"
   },
   "tabBar": {

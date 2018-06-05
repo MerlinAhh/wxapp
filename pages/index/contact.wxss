@@ -1,22 +1,23 @@
-
 .weui-cell.weui-cell_access{
   font-size: 28rpx;
   color: #000000;
   font-weight: 500;
   padding: 10px 15px;
 }
-.weui-cell::after,.weui-cell::before{
-  left: 0
+ .weui-cell::before 
+{
+  left: 0;
+  border-color: #F0F1F1;
 }
 .weui-tab__content{
-    text-align: center;
+  text-align: center;
 }
 
 .weui-navbar {
   background: #fff
 }
 .weui-tab__panel{
- padding-top: 43px
+  padding-top: 43px
 }
 .weui-tab{
   margin-top: 20rpx;
@@ -54,5 +55,31 @@
   width: 0
 }
 .haoyou .weui-cell__ft_in-access::after{
-  left: 20rpx
+  left: 20rpx;
 } 
+
+.frilist{
+  padding: 8px 15px!important;
+  transition: .6s all .6s
+}
+.frilist .weui-cell__bd{
+  padding: 0
+}
+
+
+.accessOpen{
+  position: absolute;
+  top: 50%;
+  left: 20rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-left: 4rpx #C8C8CD solid;
+  border-bottom: 4rpx #C8C8CD solid;
+  transform: rotate(-135deg); 
+  margin-top: -10rpx;
+  transition: all .6s
+}
+.Open{
+  transform: rotate(-45deg);
+  margin-top: -10rpx
+}

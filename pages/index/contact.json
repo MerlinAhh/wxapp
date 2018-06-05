@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "search": "/components/search/search"
+    "search": "/components/search/search",
+    "navbar-top": "/components/navbar/navbar-top"
   },
   "navigationBarTitleText": "联系人"
 }

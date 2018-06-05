@@ -2,7 +2,7 @@
 
 .welelogo{
   width: 26%;
-  margin: 100rpx auto
+  margin: 230rpx auto
 }
 .welecontain{
   width: 100%;

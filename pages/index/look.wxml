@@ -1,5 +1,6 @@
 <!--pages/index/look.wxml-->
-<view style='width:100%;height:100%;' bindtap='hideInput'>
+<view style='width:100%;height:100%;' bindtap='hideInput' bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend'>
+  <navbar-top id='navbar-top'></navbar-top>
   <search id='search'></search>
   <view class='lookList' wx:for='{{items}}' wx:key='*this' wx:fot-index='index' data-id='{{items[index].id}}' bindtap='detail'>
     <view class='imgBox'>

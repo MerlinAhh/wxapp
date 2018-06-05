@@ -1,3 +1,7 @@
 {
+  "usingComponents": {
+    "search": "/components/search/search",
+    "navbar-top": "/components/navbar/navbar-top"
+  },
   "navigationBarTitleText": "好友动态"
 }

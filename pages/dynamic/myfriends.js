@@ -121,10 +121,13 @@ Page({
         })
       }
     })
+
+    this.search = this.selectComponent("#search");
+    this.navbar_top = this.selectComponent("#navbar-top");
+    this.navbar_top.isBack('好友动态')
+
   },
   previewImage: function(e){
-    console.log(e.currentTarget.dataset.id)
-    console.log(e.currentTarget.dataset.index-0)
     var urllist = this.data.items[e.currentTarget.dataset.id].img
     var url = urllist[e.currentTarget.dataset.index - 0]
     wx.previewImage({
@@ -197,5 +200,46 @@ Page({
   bindinputmessage: function(e){
     console.log(e.currentTarget.dataset.id)
     console.log(e.detail.value)
+  },
+
+  // 下拉加载
+  touchmove: function (event) {
+    let currentX = event.touches[0].pageX
+    let currentY = event.touches[0].pageY
+    if (this.data.lastX <= app.globalData.systemInfo.windowHeight / 2) {
+      if (event.touches[0].pageY < app.globalData.systemInfo.windowHeight) {
+        this.navbar_top.touchmove(event);
+      }
+    }
+  },
+  touchstart: function (event) {
+    let currentX = event.touches[0].pageX
+    let currentY = event.touches[0].pageY
+    if (event.touches[0].pageY < app.globalData.systemInfo.windowHeight / 2) {
+      this.setData({
+        lastX: event.touches[0].pageX,
+        lastY: event.touches[0].pageY
+      })
+      this.navbar_top.touchstart(event);
+    }
+  },
+  touchend: function (event) {
+    var that = this
+    if (this.data.lastX <= app.globalData.systemInfo.windowHeight / 2) {
+      this.navbar_top.touchend(event);
+      setTimeout(function () {   // 请求
+        that.navbar_top.isPullEnd();
+      }, 2000)
+    }
+  },
+  news:function(){
+    wx.navigateTo({
+      url: '/pages/look/lookDetail'
+    })
+  },
+  gallery: function(){
+    wx.navigateTo({
+      url: '/pages/dynamic/mine/gallery'
+    })
   }
 })

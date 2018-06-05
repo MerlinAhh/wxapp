@@ -38,7 +38,11 @@ Page({
     // // signature = md5("appkey=" + appkey + "&timestamp=" + timestamp + "&random_str=" + '022cd9fd995849b' + "&key=" + 'fda2339cc093a416654f06d8')
     // // console.log(signature)
 
-    this.init()
+    // this.init()
+
+    // this.search = this.selectComponent("#search");
+    // this.navbar_top = this.selectComponent("#navbar-top");
+    // this.navbar_top.isBack('消 息')
   },
   // 初始化
   init: function () {
@@ -234,5 +238,39 @@ Page({
   onPullDownRefresh:function(){
     this.onShow()
     wx.startPullDownRefresh()
+  },
+
+
+
+  // 下拉加载
+  touchmove: function (event) {
+    let currentX = event.touches[0].pageX
+    let currentY = event.touches[0].pageY
+    if (this.data.lastX <= app.globalData.systemInfo.windowHeight / 2) {
+      if (event.touches[0].pageY < app.globalData.systemInfo.windowHeight) {
+        this.navbar_top.touchmove(event);
+      }
+    }
+  },
+  touchstart: function (event) {
+    let currentX = event.touches[0].pageX
+    let currentY = event.touches[0].pageY
+    if (event.touches[0].pageY < app.globalData.systemInfo.windowHeight / 2) {
+      this.setData({
+        lastX: event.touches[0].pageX,
+        lastY: event.touches[0].pageY
+      })
+      this.navbar_top.touchstart(event);
+    }
+  },
+  touchend: function (event) {
+    var that = this
+    if (this.data.lastX <= app.globalData.systemInfo.windowHeight / 2) {
+      this.navbar_top.touchend(event);
+      setTimeout(function () {   // 请求
+        that.navbar_top.isPullEnd();
+      }, 2000)
+
+    }
   }
 });

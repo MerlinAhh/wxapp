@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "search": "/components/search/search",
     "navbar-top": "/components/navbar/navbar-top"
   }
 }

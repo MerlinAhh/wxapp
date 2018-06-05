@@ -1,5 +1,6 @@
 <!--pages/index/chatbox.wxml-->
-<view style='width:100%;height:100%;' bindtap='hideInput'>
+<view style='width:100%;height:100%;' bindtap='hideInput' bindtouchstart='touchstart' bindtouchmove='touchmove' bindtouchend='touchend'>
+  <navbar-top id='navbar-top'></navbar-top>
   <view class="page__bd">
       <view class="weui-search-bar">
         <view class="weui-search-bar__form">
