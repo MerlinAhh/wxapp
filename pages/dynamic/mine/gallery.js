@@ -52,13 +52,13 @@ Page({
         }
       }
     }
-    console.log(zanList)
+    // console.log(zanList)
     this.setData({
       items: items
     })
   },
   moreaction: function (e) {
-    console.log(e.currentTarget.dataset.id)
+    // console.log(e.currentTarget.dataset.id)
     var iscover = this.data.iscover
     for (var i = 0; i < iscover.length; i++) {
       if (i == e.currentTarget.dataset.id) {
@@ -83,9 +83,9 @@ Page({
     })
   },
   bindinputfocus: function (e) {
-    console.log(e.currentTarget.dataset.id)
-    console.log(e.currentTarget.dataset.name)
-    console.log(e.currentTarget.dataset.names)
+    // console.log(e.currentTarget.dataset.id)
+    // console.log(e.currentTarget.dataset.name)
+    // console.log(e.currentTarget.dataset.names)
     var focus = this.data.focus
     for (var i = 0; i < focus.length; i++) {
       if (e.currentTarget.dataset.id == i) {
@@ -99,8 +99,8 @@ Page({
     })
   },
   bindinputmessage: function (e) {
-    console.log(e.currentTarget.dataset.id)
-    console.log(e.detail.value)
+    // console.log(e.currentTarget.dataset.id)
+    // console.log(e.detail.value)
   },
 
   // 下拉加载
@@ -143,4 +143,4 @@ Page({
       url: '/pages/dynamic/mine/gallery'
     })
   }
-})
+}) 

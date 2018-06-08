@@ -78,9 +78,9 @@ Page({
       duration: 0,
     })
     
-    this.setData({
-      'emojiMsg': emoj.emojiAnalysis(this.data.emojL)
-    })
+    // this.setData({
+    //   'emojiMsg': emoj.emojiAnalysis(this.data.emojL)
+    // })
   },
   // 初始化
   init: function () {
